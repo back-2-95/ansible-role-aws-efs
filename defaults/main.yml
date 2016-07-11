@@ -1,0 +1,15 @@
+---
+# Mount path
+aws_efs_mount: "/home/efs"
+
+# Amazon EFS file system ID
+#
+# Note: this must be in the same security group with the EC2 instances using it
+#
+aws_efs_fs_id: ""
+
+# Amazon EFS file system region
+#
+# Note: currently only available in Ireland and US (8.7.2016)
+#
+aws_efs_region: "eu-west-1"

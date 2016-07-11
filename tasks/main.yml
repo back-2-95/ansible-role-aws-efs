@@ -1,0 +1,17 @@
+- name: Install nfs-common (Debian)
+  package: name=nfs-common state=present
+  when: ansible_os_family == 'Debian'
+
+- name: Install nfs-utils (RedHat)
+  package: name=nfs-utils state=present
+  when: ansible_os_family == 'RedHat'
+
+- name: Get mount source URL with availability zone
+  action: uri url=http://169.254.169.254/latest/meta-data/placement/availability-zone return_content=yes
+  register: availability_zone
+
+- name: Create directory for the mount
+  file: path={{ aws_efs_mount }} state=directory mode=0755 owner=root group=root
+
+- name: Mount EFS to {{ aws_efs_mount }}
+  mount: name={{ aws_efs_mount }} src={{ availability_zone.content }}.{{ aws_efs_fs_id }}.efs.{{ aws_efs_region }}.amazonaws.com:/ fstype=nfs4 opts="nfsvers=4.1" state=mounted
