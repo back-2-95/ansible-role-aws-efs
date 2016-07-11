@@ -1,15 +1,18 @@
 ---
-# Mount path
-aws_efs_mount: "/home/efs"
+# Mount mappings
+#
+# Notes:
+# - Filesystem must be in the same security group with the EC2 instances using it
+# - Currently EFS is only available in Ireland and US (8.7.2016)
+#
+# Options:
+# - path:           Local path to mount target folder in your EC2 instance
+# - owner:          Owner of the folder (default value "root")
+# - group:          Group of the folder (default value "root")
+# - mode:           Permissions for the folder (default value "0644")
+# - region:         In what region filesystem is
+# - filesystem_id:  Filesystem ID
 
-# Amazon EFS file system ID
-#
-# Note: this must be in the same security group with the EC2 instances using it
-#
-aws_efs_fs_id: ""
-
-# Amazon EFS file system region
-#
-# Note: currently only available in Ireland and US (8.7.2016)
-#
-aws_efs_region: "eu-west-1"
+# Mount paths
+aws_efs_paths:
+- { path: "/opt/efs", owner: "root", group: "root", mode: "0644", region: "eu-west-1", filesystem_id: "fs-xxxx"}
