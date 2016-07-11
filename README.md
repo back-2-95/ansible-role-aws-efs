@@ -18,6 +18,12 @@ Available variables are listed below, along with default values (see `defaults/m
 
 None.
 
+## Used in requirements.yml
+
+    - src: https://github.com/back-2-95/ansible-role-aws-efs
+      version: master
+      name: back-2-95.aws-efs
+
 ## Example Playbook
 
     - hosts: your_ec2_servers
