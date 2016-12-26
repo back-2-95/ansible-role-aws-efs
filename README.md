@@ -2,6 +2,10 @@
 
 Role to mount EFS filesystems to EC2 instances.
 
+## Galaxy link
+
+https://galaxy.ansible.com/back-2-95/aws-efs/
+
 ## Requirements
 
 Amazon AWS account, EFS filesystem(s) and EC2 virtual server(s) with Ubuntu or RedHat.
