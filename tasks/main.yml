@@ -30,8 +30,8 @@
 - name: Mount paths
   mount:
     name: {{ item.path }}
-    src: {{ availability_zone.content }}.{{ item.filesystem_id }}.efs.{{ item.region }}.amazonaws.com:/
+    src: "{{ availability_zone.content }}.{{ item.filesystem_id }}.efs.{{ item.region }}.amazonaws.com:/"
     fstype: nfs4
-    opts: {{ item.opts | default("nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2") }}
-    state: {{ item.state | default("mounted") }}
+    opts: "{{ item.opts | default('nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2') }}"
+    state: "{{ item.state | default('mounted') }}"
   with_items: "{{ aws_efs_paths }}"
