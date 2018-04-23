@@ -15,7 +15,7 @@
     url: http://169.254.169.254/latest/meta-data/placement/availability-zone
     return_content: yes
   register: availability_zone
-  check_mode: false
+  when: not ansible_check_mode
 
 - name: Create directories for the mounts
   file:
