@@ -15,8 +15,8 @@ Amazon AWS account, EFS filesystem(s) and EC2 virtual server(s) with Ubuntu or R
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
     aws_efs_paths:
-    - { path: "/some/path", owner: "root", group: "root", mode: "0644", region: "eu-west-1", filesystem_id: "fs-someid"}
-    - { path: "/some/other/path", owner: "root", group: "root", mode: "0755", region: "eu-west-1", filesystem_id: "fs-someotherid"}
+    - { path: "/some/path", owner: "root", group: "root", mode: "0644", region: "eu-west-1", filesystem_id: "fs-someid", state: "mounted"}
+    - { path: "/some/other/path", owner: "root", group: "root", mode: "0755", region: "eu-west-1", filesystem_id: "fs-someotherid", state: "mounted"}
 
 ## Dependencies
 

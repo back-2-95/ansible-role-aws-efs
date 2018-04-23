@@ -15,5 +15,5 @@
   with_items: "{{ aws_efs_paths }}"
 
 - name: Mount paths
-  mount: name={{ item.path }} src={{ availability_zone.content }}.{{ item.filesystem_id }}.efs.{{ item.region }}.amazonaws.com:/ fstype=nfs4 opts="nfsvers=4.1" state=mounted
+  mount: name={{ item.path }} src={{ availability_zone.content }}.{{ item.filesystem_id }}.efs.{{ item.region }}.amazonaws.com:/ fstype=nfs4 opts="nfsvers=4.1" state={{ item.state | default("mounted") }}
   with_items: "{{ aws_efs_paths }}"
