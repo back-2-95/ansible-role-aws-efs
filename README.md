@@ -4,7 +4,7 @@ Role to mount EFS filesystems to EC2 instances.
 
 ## Galaxy link
 
-https://galaxy.ansible.com/thiagoalmeidasa/aws-efs/
+https://galaxy.ansible.com/thiagoalmeidasa/aws_efs/
 
 ## Requirements
 
@@ -26,7 +26,7 @@ None.
 
     - src: https://github.com/thiagoalmeidasa/ansible-role-aws-efs
       version: master
-      name: thiagoalmeidasa.aws-efs
+      name: thiagoalmeidasa.aws_efs
 
 ## Example Playbook
 
@@ -34,7 +34,7 @@ None.
       vars_files:
         - vars/main.yml
       roles:
-        - { role: thiagoalmeidasa.aws-efs }
+        - { role: thiagoalmeidasa.aws_efs }
 
 ## License
 

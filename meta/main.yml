@@ -2,7 +2,7 @@
 dependencies: []
 
 galaxy_info:
-  role_name: aws-efs
+  role_name: aws_efs
   author: thiagoalmeidasa
   description: Mount Amazon EFS file systems to EC2 instances.
   license: "license (BSD, MIT)"
