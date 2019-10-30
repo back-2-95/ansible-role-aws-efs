@@ -1,0 +1,13 @@
+---
+github_account: thiagoalmeidasa
+github_repo: ansible-role-aws-efs
+mandatory_variables:
+  aws_efs_paths:
+  - path: ''
+    owner: ''
+    group: ''
+    mode: ''
+    region: ''
+    filesystem_id: ''
+    state: ''
+    opts: ''
