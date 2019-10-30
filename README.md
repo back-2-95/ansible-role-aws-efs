@@ -1,6 +1,14 @@
-# ansible-aws_efs
+# Ansible Role: AWS EFS
 
 Mount Amazon EFS file systems to EC2 instances.
+
+## Galaxy link
+
+https://galaxy.ansible.com/thiagoalmeidasa/aws_efs/
+
+## Requirements
+
+Amazon AWS account, EFS filesystem(s) and EC2 virtual server(s) with Ubuntu or RedHat.
 
 ## Ansible requirements
 
