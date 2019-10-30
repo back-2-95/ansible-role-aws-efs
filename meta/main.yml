@@ -3,7 +3,7 @@ dependencies: []
 
 galaxy_info:
   role_name: aws_efs
-  author: thiagoalmeidasa
+  author: "thiagoalmeidasa <thiagoalmeidasa@gmail.com>"
   description: Mount Amazon EFS file systems to EC2 instances.
   license: "license (BSD, MIT)"
   min_ansible_version: 2.0
