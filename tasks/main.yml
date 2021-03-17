@@ -10,9 +10,20 @@
     state: present
   when: ansible_os_family == 'RedHat'
 
+- name: Get IMDSv2 access token
+  uri:
+    url: http://169.254.169.254/latest/api/token
+    method: PUT
+    headers:
+      X-aws-ec2-metadata-token-ttl-seconds: 10
+    return_content: yes
+  register: imdsv2_token
+
 - name: Get mount source URL with availability zone
   uri:
     url: http://169.254.169.254/latest/meta-data/placement/availability-zone
+    headers:
+      X-aws-ec2-metadata-token: "{{ imdsv2_token.content }}"
     return_content: yes
   register: availability_zone
   when: not ansible_check_mode
