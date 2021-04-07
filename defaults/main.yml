@@ -3,7 +3,7 @@
 #
 # Notes:
 # - Filesystem must be in the same security group with the EC2 instances using it
-# - Currently EFS is only available in Ireland and US (8.7.2016)
+# - For details of Amazon EFS service availability by region, check: https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/
 #
 # Options:
 # - path:           Local path to mount target folder in your EC2 instance
@@ -12,7 +12,16 @@
 # - mode:           Permissions for the folder (default value "0644")
 # - region:         In what region filesystem is
 # - filesystem_id:  Filesystem ID
+# - state:          Ansible mount module options. (default value "mounted")  http://docs.ansible.com/ansible/latest/mount_module.html#options
+# - opts:           Mount options (see fstab(5), or vfstab(4) on Solaris). (default following aws instructions "nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2")
 
 # Mount paths
 aws_efs_paths:
-- { path: "/opt/efs", owner: "root", group: "root", mode: "0644", region: "eu-west-1", filesystem_id: "fs-xxxx"}
+- path: /opt/efs
+  owner: ''
+  group: ''
+  mode: ''
+  region: ''
+  filesystem_id: ''
+  state: ''
+  opts: ''
